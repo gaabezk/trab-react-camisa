@@ -1,11 +1,15 @@
+import "../style/bootstrap.min.css"
 
-export function Produto(){
-    return(
-        <div>
+export function Produto(props) {
+    return (
+        <>
 
-            <h1>OLA AMIGOS</h1>
+            <h2>{props.nome}</h2>
+            <div>
+                <img width="30%" src={props.img} alt="produto"/>
+            </div>
 
-        </div>
+        </>
 
 
     )

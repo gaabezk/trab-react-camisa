@@ -9,12 +9,13 @@ function App() {
     return (
 
         <>
-            <div style={{paddingBottom:"80px"}}><NavBar2 /></div>
+            {/* ================Renderiza navbar================ */}
+            <div style={{paddingBottom:"70px"}}><NavBar2 /></div>
 
-
+            {/* ======Renderiza a pagina do url digitado ====== */}
             <Rotas/>
 
-
+            {/* =========Renderiza rodapé========= */}
             <Footer2/>
 
         </>
