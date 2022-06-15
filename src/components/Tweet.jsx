@@ -1,5 +1,5 @@
-export function Tweet(props){
+export function Tweet({texto}){
     return(
-        <h1>{props.texto}</h1>
+        <h1>{texto}</h1>
     )
 }

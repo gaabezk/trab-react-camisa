@@ -17,7 +17,6 @@ function App() {
 
             {/* =========Renderiza rodapé========= */}
             <Footer2/>
-
         </>
     );
 }

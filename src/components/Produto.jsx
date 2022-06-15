@@ -1,14 +1,12 @@
 import "../style/bootstrap.min.css"
 
-export function Produto(props) {
+export function Produto({nome, img}) {
     return (
         <>
-
-            <h2>{props.nome}</h2>
+            <h2>{nome}</h2>
             <div>
-                <img width="30%" src={props.img} alt="produto"/>
+                <img width="30%" src={img} alt="produto"/>
             </div>
-
         </>
 
 
