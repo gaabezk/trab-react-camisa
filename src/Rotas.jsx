@@ -12,7 +12,6 @@ export function Rotas() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Catalogo" element={<Catalogo/>}/>
-                <Route path="/Produto" element={<Produto/>}/>
                 <Route path="/Teste" element={<Teste/>}/>
                 <Route path="/Carrinho" element={<Carrinho/>}/>
                 <Route path="*" element={<NotFound/>}/>
