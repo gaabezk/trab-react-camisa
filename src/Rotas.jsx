@@ -4,6 +4,7 @@ import {Catalogo} from "./pages/Catalogo";
 import {Teste} from "./pages/Teste";
 import {Home} from "./pages/Home";
 import {NotFound} from "./pages/NotFound";
+import {Produto} from "./components/Produto";
 
 export function Rotas() {
     return (
@@ -11,6 +12,7 @@ export function Rotas() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Catalogo" element={<Catalogo/>}/>
+                <Route path="/Produto" element={<Produto/>}/>
                 <Route path="/Teste" element={<Teste/>}/>
                 <Route path="/Carrinho" element={<Carrinho/>}/>
                 <Route path="*" element={<NotFound/>}/>

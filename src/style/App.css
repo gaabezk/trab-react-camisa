@@ -3,11 +3,12 @@ body{
     color: #a7a7a7;
     text-align: center;
     align-self: center;
+
 }
 .navbar {
     position: fixed;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     margin: 0;
     padding: 0;

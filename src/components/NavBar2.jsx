@@ -22,6 +22,9 @@ export function NavBar2() {
                         <li className="nav-item">
                             <a href="http://localhost:3000/teste">Teste</a>
                         </li>
+                        <li className="nav-item">
+                            <a href="http://localhost:3000/produto">Produto</a>
+                        </li>
 
                     </ul>
                 </div>

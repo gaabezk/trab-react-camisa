@@ -9,9 +9,11 @@ function App() {
     return (
 
         <>
-            <NavBar2/>
+            <div style={{paddingBottom:"80px"}}><NavBar2 /></div>
+
 
             <Rotas/>
+
 
             <Footer2/>
 
