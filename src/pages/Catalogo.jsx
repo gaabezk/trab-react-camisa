@@ -1,0 +1,32 @@
+export function Catalogo() {
+    return (
+        <>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+            <h1>CATALOGO</h1>
+        </>
+    )
+}
