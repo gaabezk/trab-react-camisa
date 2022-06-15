@@ -34,8 +34,6 @@ export function Catalogo() {
                     <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
                 </div>
             </div>
-
-
         </>
     )
 }
