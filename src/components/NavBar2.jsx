@@ -8,7 +8,7 @@ export function NavBar2() {
                 <div className="container noPading">
                     <ul className="nav">
                         <li className="nav-item">
-                            <img src="/src/img/camisa_10.png" alt="www"/>
+                            <img src="/src/img/camisa_10.png" alt="www" />
                         </li>
                         <li className="nav-item">
                             <a href="http://localhost:3000/">Home</a>
@@ -17,15 +17,14 @@ export function NavBar2() {
                             <a href="http://localhost:3000/catalogo">Catalogo</a>
                         </li>
                         <li className="nav-item">
+                            <a href="http://localhost:3000/contato">Contato</a>
+                        </li>
+                        <li className="nav-item">
+                            <a href="http://localhost:3000/cadastro">Cadastro</a>
+                        </li>
+                        <li className="nav-item">
                             <a href="http://localhost:3000/carrinho">Carrinho</a>
                         </li>
-                        <li className="nav-item">
-                            <a href="http://localhost:3000/teste">Teste</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="http://localhost:3000/produto">Produto</a>
-                        </li>
-
                     </ul>
                 </div>
             </nav>
