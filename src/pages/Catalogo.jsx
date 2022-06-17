@@ -1,39 +1,35 @@
 import {Produto} from "../components/Produto";
+import API from "../API";
+import {useEffect, useState} from "react";
 
-export function Catalogo() {
+export const Catalogo = () => {
+
+    const [produto,setProduto] = useState([]);
+
+    useEffect(() => {
+        const pegarDados = async () => {
+            const resposta = await API.get("/produto");
+            setProduto(resposta.data);
+        }
+
+        pegarDados();
+    },[]);
+
+    const novoArray = produto.map((t,index) => {
+        return (
+            <div className="col-lg-3 col-md-4 col-sm-4">
+                <Produto nome={t.nome} descricao={t.descricao} tamanho={t.tamanho} genero={t.genero} valor={t.valor} categoria={t.categoria.nome} img={t.url}/>
+            </div>
+        )
+    })
+
 
     return (
-        <>
+        <div className="row" >
             <img width="100%" src="/src/img/fundoCatalogo.png"/>
-
-            <div className='row'>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div><div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
-                    <Produto nome="CAMISA" img="/src/img/camiseta.png"/>
-                </div>
-            </div>
-        </>
+            {novoArray}
+        </div>
     )
+
+
 }

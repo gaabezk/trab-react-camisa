@@ -15,6 +15,8 @@ function App() {
             {/* ======Renderiza a pagina do url digitado ====== */}
             <Rotas/>
 
+            <br/>
+            <br/>
             {/* =========Renderiza rodapé========= */}
             <Footer2/>
         </>
