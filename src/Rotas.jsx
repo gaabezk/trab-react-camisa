@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Administracao } from "./pages/Administracao";
 import { Cadastro } from "./pages/Cadastro";
 import { Carrinho } from "./pages/Carrinho";
 import { Catalogo } from "./pages/Catalogo";
@@ -15,6 +16,7 @@ export function Rotas() {
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/Carrinho" element={<Carrinho />} />
                 <Route path="/Cadastro" element={<Cadastro />} />
+                <Route path="/Administracao" element={<Administracao />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>

@@ -57,3 +57,16 @@ body {
     text-align: center;
     bottom: 0;
 }
+
+.titulo {
+    padding: 30px;
+}
+
+.input {
+    padding-bottom: 20px;
+}
+
+input {
+    width: 12rem;
+
+}
