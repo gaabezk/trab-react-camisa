@@ -1,7 +1,7 @@
 import "../style/bootstrap.min.css"
 import "../style/App.css";
 
-export function NavBar2() {
+export function Nav() {
     return (
         <>
             <nav className="navbar">
@@ -22,7 +22,7 @@ export function NavBar2() {
                             <a href="http://localhost:3000/contato">Contato</a>
                         </li>
                         <li className="nav-item">
-                            <a href="http://localhost:3000/cadastro">Cadastro</a>
+                            <a href="http://localhost:3000/usuario">Usuario</a>
                         </li>
                         <li className="nav-item">
                             <a href="http://localhost:3000/carrinho">Carrinho</a>
