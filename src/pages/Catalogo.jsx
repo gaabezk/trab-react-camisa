@@ -17,12 +17,11 @@ export const Catalogo = () => {
 
     const novoArray = produto.map((t,index) => {
         return (
-            <div className="col-lg-3 col-md-4 col-sm-4">
-                <Produto nome={t.nome} descricao={t.descricao} tamanho={t.tamanho} genero={t.genero} valor={t.valor} categoria={t.categoria.nome} img={t.url}/>
+            <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                <Produto nome={t.nome} descricao={t.descricao} tamanho={t.tamanho} genero={t.genero} valor={t.valor} categoria={t.categoria.nome} id={t.id} img={t.url}/>
             </div>
         )
     })
-
 
     return (
         <div className="row" >
@@ -30,6 +29,4 @@ export const Catalogo = () => {
             {novoArray}
         </div>
     )
-
-
 }

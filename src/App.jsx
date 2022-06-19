@@ -1,6 +1,6 @@
 import {Rotas} from "./Rotas";
 import {Footer2} from "./components/Footer2";
-import {NavBar2} from "./components/NavBar2";
+import {Nav} from "./components/Nav";
 import "./style/App.css";
 
 
@@ -10,7 +10,7 @@ function App() {
 
         <>
             {/* ================Renderiza navbar================ */}
-            <div style={{paddingBottom:"70px"}}><NavBar2 /></div>
+            <div style={{paddingBottom:"70px"}}><Nav /></div>
 
             {/* ======Renderiza a pagina do url digitado ====== */}
             <Rotas/>
