@@ -6,6 +6,7 @@ import { Catalogo } from "./pages/Catalogo";
 import { Contato } from "./pages/Contato";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
+import {QuemSomos} from "./pages/QuemSomos";
 
 export function Rotas() {
     return (
@@ -17,6 +18,7 @@ export function Rotas() {
                 <Route path="/Carrinho" element={<Carrinho />} />
                 <Route path="/Cadastro" element={<Cadastro />} />
                 <Route path="/Administracao" element={<Administracao />} />
+                <Route path="/quem-somos" element={<QuemSomos />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>

@@ -1,0 +1,14 @@
+.produto-descricao{
+    margin-bottom: 0;
+    color: black;
+}
+.botao{
+    margin-top: 15px;
+    color: white;
+}
+.produto-back {
+    border-radius: 8px;
+    background-color:#ccc;
+    margin: 25px;
+    padding-bottom: 30px
+}
