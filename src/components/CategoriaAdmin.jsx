@@ -11,7 +11,6 @@ function CategoriaAdmin() {
     const [nome, setNome] = useState()
     const [funcionario, setFuncionario] = useState()
 
-
     function alterar(e) {
         e.preventDefault();
         console.log("alterou");
@@ -27,7 +26,6 @@ function CategoriaAdmin() {
         API.post(`/categoria/${funcionario}`, {
             nome: `${nome}`, descricao: `${descricao}`
         },
-
             {
                 headers: {
                     'Content-Type': 'application/json',
