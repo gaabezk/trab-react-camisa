@@ -1,9 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import "../style/App.css";
-
 export function Nav() {
     return (
-        <>
+        <div>
             <nav className="navbar">
                 <div className="container noPading">
                     <ul className="nav">
@@ -33,6 +30,6 @@ export function Nav() {
                     </ul>
                 </div>
             </nav>
-        </>
+        </div>
     )
 }
