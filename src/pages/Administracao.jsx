@@ -1,6 +1,7 @@
 import ProdutoAdmin from "../components/ProdutoAdmin";
 import CategoriaAdmin from "../components/CategoriaAdmin";
 import '../style/Administracao.css'
+import FuncionarioAdmin from "../components/FuncionarioAdmin";
 
 export function Administracao() {
     return (
@@ -12,7 +13,7 @@ export function Administracao() {
                 <CategoriaAdmin />
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4">
-                <ProdutoAdmin />
+                <FuncionarioAdmin />
             </div>
         </div>
 
