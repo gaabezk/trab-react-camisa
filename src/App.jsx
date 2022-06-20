@@ -1,8 +1,6 @@
 import {Rotas} from "./Rotas";
-import {Footer2} from "./components/Footer2";
-import {NavBar2} from "./components/NavBar2";
-import "./style/App.css";
-
+import {Footer} from "./components/Footer";
+import {Nav} from "./components/Nav";
 
 function App() {
 
@@ -10,7 +8,7 @@ function App() {
 
         <>
             {/* ================Renderiza navbar================ */}
-            <div style={{paddingBottom:"70px"}}><NavBar2 /></div>
+            <div style={{paddingBottom:"70px"}}><Nav /></div>
 
             {/* ======Renderiza a pagina do url digitado ====== */}
             <Rotas/>
@@ -18,7 +16,7 @@ function App() {
             <br/>
             <br/>
             {/* =========Renderiza rodapé========= */}
-            <Footer2/>
+            <Footer/>
         </>
     );
 }

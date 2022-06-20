@@ -1,9 +1,6 @@
-import "../style/bootstrap.min.css"
-import "../style/App.css";
-
-export function NavBar2() {
+export function Nav() {
     return (
-        <>
+        <div>
             <nav className="navbar">
                 <div className="container noPading">
                     <ul className="nav">
@@ -22,7 +19,7 @@ export function NavBar2() {
                             <a href="http://localhost:3000/contato">Contato</a>
                         </li>
                         <li className="nav-item">
-                            <a href="http://localhost:3000/cadastro">Cadastro</a>
+                            <a href="http://localhost:3000/usuario">Usuario</a>
                         </li>
                         <li className="nav-item">
                             <a href="http://localhost:3000/carrinho">Carrinho</a>
@@ -33,6 +30,6 @@ export function NavBar2() {
                     </ul>
                 </div>
             </nav>
-        </>
+        </div>
     )
 }

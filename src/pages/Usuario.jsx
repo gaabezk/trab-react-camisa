@@ -1,9 +1,8 @@
-import { useState } from "react";
 import InserirEndereco from "../components/InserirEndereco";
 import CriarConta from "../components/CriarConta";
 import '../style/Cadastro.css'
 
-export function Cadastro() {
+export function Usuario() {
     
     return (
         <div className="row">
@@ -18,4 +17,4 @@ export function Cadastro() {
 
 }
 
-export default Cadastro
+export default Usuario;
