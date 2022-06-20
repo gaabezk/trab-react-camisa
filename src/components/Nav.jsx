@@ -13,16 +13,10 @@ export function Nav() {
                             <a href="http://localhost:3000/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a href="http://localhost:3000/catalogo">Catalogo</a>
+                            <a href="http://localhost:3000/catalogo">Catálogo</a>
                         </li>
                         <li className="nav-item">
-                            <a href="http://localhost:3000/contato">Contato</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="http://localhost:3000/usuario">Usuario</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="http://localhost:3000/carrinho">Carrinho</a>
+                            <a href="http://localhost:3000/usuario">Sua Conta</a>
                         </li>
                         <li className="nav-item">
                             <a href="http://localhost:3000/administracao">ADM</a>
