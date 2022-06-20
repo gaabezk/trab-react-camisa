@@ -1,6 +1,6 @@
-import "../style/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import "../style/App.css";
-export function Footer2() {
+export function Footer() {
     return (
         <>
             <footer className="footer">

@@ -1,5 +1,5 @@
 import {Rotas} from "./Rotas";
-import {Footer2} from "./components/Footer2";
+import {Footer} from "./components/Footer";
 import {Nav} from "./components/Nav";
 import "./style/App.css";
 
@@ -18,7 +18,7 @@ function App() {
             <br/>
             <br/>
             {/* =========Renderiza rodapé========= */}
-            <Footer2/>
+            <Footer/>
         </>
     );
 }

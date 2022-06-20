@@ -24,8 +24,7 @@ function CategoriaAdmin() {
     function cadastrar(e) {
         e.preventDefault();
         API.post(`/categoria/${funcionario}`, {
-            nome: {nome},
-            descricao: {descricao}},
+            nome: `${nome}`, descricao: `${descricao}` },
 
             {
                 headers: {
