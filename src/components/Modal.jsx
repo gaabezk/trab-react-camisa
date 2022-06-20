@@ -1,8 +1,8 @@
 import { Modal, Button } from 'react-bootstrap'
 
-export default function Message({ show, handleClose, title, texto }) {
+export default function Message({ show, handleClose, title, texto, acao }) {
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal style={{marginTop:"80px"}} show={show} onHide={handleClose}>
             <Modal.Dialog>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -13,8 +13,8 @@ export default function Message({ show, handleClose, title, texto }) {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="primary">Confirmar</Button>
-                    <Button variant="secondary">Cancelar</Button>
+                    <Button onClick={acao} variant="primary">Confirmar</Button>
+                    <Button onClick={handleClose} variant="secondary">Cancelar</Button>
                 </Modal.Footer>
             </Modal.Dialog>
         </Modal>
