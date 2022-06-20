@@ -9,6 +9,15 @@ function ProdutoAdmin() {
 
     function alterar(e) {
         e.preventDefault();
+        // API.post("/produto", {
+        //     nome: {nome},
+        //     descricao: {descricao},
+        //     tamanho: {tamanho},
+        //     genero: {genero},
+        //     quantidadeEstoque: {quantidadeEstoque},
+        //     valor: {valor}
+
+        // })
         console.log(`${produto} alterado com sucesso`)
         console.log(`Alteracoes: Categoria:${categoria}, Descricao:${descricao}, Genero:${genero}, Nome:${nome}, Quantidade:${quantidadeEstoque}, Tamanho:${tamanho}, Valor:${valor}`)
     }
@@ -61,7 +70,10 @@ function ProdutoAdmin() {
                     <input type="text" placeholder="Alterar valor" onChange={(e) => setValor(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="submit" value="Alterar" />
+                    <input type="submit" value="Alterar Produto" />
+                </div>
+                <div className="input">
+                    <input type="submit" value="Cadastrar Produto" />
                 </div>
             </form>
             <form onSubmit={(e) => { setShow(true); deletar(e) }}>
