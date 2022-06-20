@@ -1,5 +1,5 @@
 import InserirEndereco from "../components/InserirEndereco";
-import CriarConta from "../components/CriarConta";
+import UserNewAccount from "../components/UserNewAccount";
 import '../style/Cadastro.css'
 
 export function Usuario() {
@@ -7,7 +7,7 @@ export function Usuario() {
     return (
         <div className="row">
             <div className="col-lg-3 col-md-4 col-sm-4">
-                <CriarConta/>
+                <UserNewAccount/>
             </div>
             <div className="col-lg-3 col-md-4 col-sm-4">
                 <InserirEndereco/>
