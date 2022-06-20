@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css"
 import "../style/Produto.css"
 import {Button} from "react-bootstrap";
 

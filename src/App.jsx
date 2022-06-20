@@ -1,8 +1,6 @@
 import {Rotas} from "./Rotas";
 import {Footer} from "./components/Footer";
 import {Nav} from "./components/Nav";
-import "./style/App.css";
-
 
 function App() {
 
