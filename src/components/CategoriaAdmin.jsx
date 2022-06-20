@@ -53,31 +53,37 @@ function CategoriaAdmin() {
 
     return (
         <div>
-            <h1 className="titulo">Time</h1>
-            <h4 className="titulo">Insira as Informacoes a seguir:</h4>
-            <div className="input">
-                <input type="text" placeholder="Nome do Time" onChange={(e) => setNome(e.target.value)}/>
-            </div>
-            <div className="input">
-                <input type="text" placeholder="CPF do Funcionario" onChange={(e) => setFuncionario(e.target.value)}/>
-            </div>
-
-            <h4 className="titulo">Insira as alteracoes da Categoria:</h4>
-            <div className="input">
-                <input type="text" placeholder="Alterar descricao" onChange={(e) => setDescricao(e.target.value)}/>
-            </div>
-            <div className="input">
-                <input type="text" placeholder="Alterar nome" onChange={(e) => setNome(e.target.value)}/>
-            </div>
-
-            <button onClick={cadastrar}>CADASTRAR</button>
-            <button onClick={alterar}>ALTERAR</button>
-
-            <form onSubmit={(e) => {setShow(true);deletar(e)}}>
+            <form onSubmit={cadastrar}>
+                <h1 className="titulo">Time</h1>
+                <h4 className="titulo">Insira as Informacoes a seguir:</h4>
                 <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Produto"/>
+                    <input type="text" placeholder="Nome do Time" onChange={(e) => setNome(e.target.value)}/>
+                </div>
+                <div className="input">
+                    <input type="text" placeholder="CPF do Funcionario" onChange={(e) => setFuncionario(e.target.value)}/>
+                </div>
+
+                <h4 className="titulo">Informações do time:</h4>
+                <div className="input">
+                    <input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value)}/>
+                </div>
+                <div className="input">
+                    <input type="text" placeholder={"Descricao"} onChange={(e) => setDescricao(e.target.value)}/>
+                </div>
+                <div className="input">
+                    <input type="submit" value="Cadastrar Time" />
                 </div>
             </form>
+                <form onSubmit={alterar}>
+                    <div className="input">
+                        <input type="submit" value="Alterar Time" />
+                    </div>
+                </form>
+                <form onSubmit={(e) => {setShow(true);deletar(e)}}>
+                    <div className="input">
+                        <input className="deletar" type="submit" value="Deletar Produto"/>
+                    </div>
+                </form>
 
             <div>
                 <Message acao={deletar} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?" texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`}/>
