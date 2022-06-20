@@ -46,7 +46,10 @@ export default function FuncionarioAdmin() {
             <form onSubmit={alterar}>
                 <h4 className="titulo">Insira as alteracoes do Funcionario:</h4>
                 <div className="input">
-                    <input type="text" placeholder="Alterar data de nascimento" onChange={(e) => setDataNascimento(e.target.value)} />
+                    <input type="text" placeholder="Inserir CPF" onChange={(e) => setCpf(e.target.value)} />
+                </div>
+                <div className="input">
+                    <input type="date" placeholder="Alterar data de nascimento" onChange={(e) => setDataNascimento(e.target.value)} />
                 </div>
                 <div className="input">
                     <input type="text" placeholder="Alterar email" onChange={(e) => setEmail(e.target.value)} />
