@@ -1,0 +1,42 @@
+<<<<<<< Updated upstream
+.home_container h1{
+    font-size: 2.5em;
+    margin-bottom: .5em;
+}
+
+.home_container h1 span{
+    color: blue;
+    padding: 0 .2em;
+    background-color: red;
+}
+=======
+.container h1{
+    font-size: 5em;
+    margin-bottom: .5em;
+    color: #a81a1a;
+}
+
+.container > h1 > span{
+    color: white;
+    padding: 0 .2em;
+    background-color: #a81a1a;
+}
+
+.container > h2 {
+    font-size: 2em;
+    color: #a81a1a;
+}
+
+.container > img{
+    border-radius: 0px;
+    width: 500px;
+}
+
+.container > div > img{
+    width: 100px;
+}
+.container > p{
+    
+    color: white;
+}
+>>>>>>> Stashed changes
