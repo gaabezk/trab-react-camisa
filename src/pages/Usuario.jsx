@@ -5,6 +5,7 @@ import API from "../API";
 import { useEffect, useState } from "react";
 import '../style/Cadastro.css'
 
+
 export const Usuario = () => {
 
     // const [cliente, setCliente] = useState([]);
@@ -30,10 +31,10 @@ export const Usuario = () => {
     return (
         <>
             <div className="row">
-                <div className="col-lg-4 col-md-4 col-sm-4">
+                <div className="col-lg-6 col-md-6 col-sm-6">
                     <UserNewAccount />
                 </div>
-                <div className="col-lg-4 col-md-4 col-sm-4">
+                <div className="col-lg-6 col-md-6 col-sm-6">
                     <InserirEndereco />
                 </div>
                 {/* <div className="col-lg-4 col-md-4 col-sm-4">

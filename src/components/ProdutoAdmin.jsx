@@ -28,21 +28,29 @@ function ProdutoAdmin() {
         "valor": `${valor}`
     }
 
-    async function cadastrar(e) {
+    function cadastrar(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append("produtoDTO", produtoData);
-        formData.append("file", foto);
-        try {
-            const response = await axios({
-                method: "post",
-                url: `http://localhost:8080/produto/${categoria}/${funcionario}`,
-                data: formData,
-                headers: [{ "Content-Type": "application/json" }, { "Content-Type": "image/png" }], Accept: 'multipart/form-data',
-            });
-        } catch (error) {
-            console.log(error)
-        }
+        API.post(`/produto/{nome}/{funcionario}`, {
+            "descricao": `${descricao}`,
+            "genero": `${genero}`,
+            "nome": `${nome}`,
+            "quantidadeEstoque": `${quantidadeEstoque}`,
+            "tamanho": `${tamanho}`,
+            "valor": `${valor}`,
+            "foto": `${foto}`
+        },
+
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     function alterar(e) {
@@ -115,7 +123,7 @@ function ProdutoAdmin() {
                     <input type="number" placeholder="Valor" onChange={(e) => setValor(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="text" placeholder="Foto" onChange={(e) => setFoto(e.target.value)} />
+                    <input type="text" placeholder="Url da Imagem" onChange={(e) => setFoto(e.target.value)} />
                 </div>
                 <div className="input">
                     <input type="submit" value="Cadastrar Produto" />
