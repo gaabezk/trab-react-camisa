@@ -18,14 +18,14 @@ export default function UserNewAccount() {
     function cadastrar(e) {
         e.preventDefault();
         API.post("/usuario/cliente", {
-                nome: `${nome}`,
-                cpf: `${cpf}`,
-                dataNascimento: `${dataNascimento}`,
-                email:`${email}`,
-                senha: `${senha}`,
-                telefone: `${telefone}`,
-                username: `${username}`
-            },
+            nome: `${nome}`,
+            cpf: `${cpf}`,
+            dataNascimento: `${dataNascimento}`,
+            email: `${email}`,
+            senha: `${senha}`,
+            telefone: `${telefone}`,
+            username: `${username}`
+        },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,9 +42,9 @@ export default function UserNewAccount() {
     function alterar(e) {
         e.preventDefault();
         API.put(`/usuario/cliente/${cpf}`, {
-                nome:`${nome}`,
-                telefone: `${telefone}`,
-            },
+            nome: `${nome}`,
+            telefone: `${telefone}`,
+        },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +93,9 @@ export default function UserNewAccount() {
                 </div>
 
                 <div className="input">
+
                     <input type="submit" value="Criar Conta" />
+
                 </div>
             </form>
             <form onSubmit={alterar}>
@@ -106,11 +108,15 @@ export default function UserNewAccount() {
                     <input className="deletar" type="submit" value="Deletar Conta" />
                 </div>
             </form>
+
             <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o sua conta ${nome} ?`} />
             <br/>
             <br/>
             <br/>
             <br/>
+
+            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar sua conta?`} />
+
         </div>
     )
 }

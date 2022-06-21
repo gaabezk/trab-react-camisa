@@ -5,7 +5,7 @@ export function Nav() {
                 <div className="container noPading">
                     <ul className="nav">
                         <li className="nav-item">
-                            <a href="https://cdn-icons-png.flaticon.com/512/34/34562.png">
+                            <a href="http://localhost:3000">
                                 <img src="/src/img/camisa_10.png" alt="www" />
                             </a>
                         </li>

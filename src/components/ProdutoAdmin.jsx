@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Message from "./Modal";
+import API from "../API"
 
 function ProdutoAdmin() {
 
@@ -16,13 +17,33 @@ function ProdutoAdmin() {
     const [tamanho, setTamanho] = useState();
     const [valor, setValor] = useState();
 
+    function cadastrar(e) {
+        e.preventDefault();
+        API.post("/produto", {
+            descricao: `{descricao}`,
+            genero: `{genero}`,
+            nome: `{nome}`,
+            quantidadeEstoque: `{quantidadeEstoque}`,
+            tamanho: `{tamanho}`,
+            valor: `{valor}`,
+        },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
+    }
+
     function alterar(e) {
         e.preventDefault();
         console.log(`${produto} alterado com sucesso`)
         console.log(`Alteracoes: Categoria:${categoria}, Descricao:${descricao}, Genero:${genero}, Nome:${nome}, Quantidade:${quantidadeEstoque}, Tamanho:${tamanho}, Valor:${valor}`)
-    }
-    function cadastrar(e) {
-        e.preventDefault();
     }
     function deletar(e) {
         e.preventDefault();
@@ -65,11 +86,11 @@ function ProdutoAdmin() {
                     <input type="submit" value="Cadastrar Produto" />
                 </div>
             </form>
-                <form onSubmit={alterar}>
-                    <div className="input">
-                        <input type="submit" value="Alterar Produto" />
-                    </div>
-                </form>
+            <form onSubmit={alterar}>
+                <div className="input">
+                    <input type="submit" value="Alterar Produto" />
+                </div>
+            </form>
             <form onSubmit={(e) => { setShow(true); deletar(e) }}>
                 <div className="input">
                     <input className="deletar" type="submit" value="Deletar Produto" />

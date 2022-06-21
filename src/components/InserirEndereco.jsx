@@ -40,6 +40,7 @@ export function InserirEndereco() {
     return (
         <div>
             <h1 className="titulo">Adicionar Endereco</h1>
+            <h4 className="titulo">Endereco:</h4>
             <form onSubmit={Cadastrar}>
                 <div className="input">
                     <input type="text" id="cpf" name="cpf" placeholder="cpf do cliente" onChange={(e) => setCliente(e.target.value)} />
