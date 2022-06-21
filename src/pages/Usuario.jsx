@@ -3,8 +3,6 @@ import UserNewAccount from "../components/UserNewAccount";
 import { CardUsuario } from "../components/CardUsuario";
 import API from "../API";
 import { useEffect, useState } from "react";
-import '../style/Cadastro.css'
-
 
 export const Usuario = () => {
 
