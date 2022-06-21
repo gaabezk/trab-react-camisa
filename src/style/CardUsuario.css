@@ -1,0 +1,10 @@
+.usuario-descricao{
+    margin-bottom: 0;
+    color: black;
+}
+.usuario-info {
+    border-radius: 8px;
+    background-color:#ccc;
+    margin: 25px;
+    padding-bottom: 30px
+}
