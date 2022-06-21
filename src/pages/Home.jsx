@@ -15,7 +15,11 @@ export function Home(){
             <img src="/src/img/vasco.png" alt="Vasco"></img>
             <img src="/src/img/botafogo.png" alt="Botafogo"></img>
             </div>
-            
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </section>
 
     )
