@@ -37,6 +37,7 @@ function CategoriaAdmin() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
 
     function cadastrar(e) {
