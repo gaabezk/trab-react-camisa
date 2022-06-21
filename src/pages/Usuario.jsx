@@ -39,6 +39,7 @@ export const Usuario = () => {
                     {novoArray}
                 </div> */}
             </div>
+        </div>
             <br />
             <br />
             <br />

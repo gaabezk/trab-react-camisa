@@ -1,11 +1,13 @@
 import "../style/Produto.css"
-import {Button} from "react-bootstrap";
+import {useState} from "react";
+import Carrinho from "./adicionarAoCarrinho";
 
 export function Produto({nome, categoria, descricao, img, genero, valor, tamanho,id}) {
 
-    function comprar(){
-        console.log("comprou!")
-    }
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const idProd = id;
 
     return (
         <div>
@@ -15,7 +17,12 @@ export function Produto({nome, categoria, descricao, img, genero, valor, tamanho
                 <p className="produto-descricao">{genero} {tamanho}</p>
                 <h4 className="produto-descricao">R${valor}</h4>
                 <p>{id}</p>
-                <Button onClick={comprar} className="botao">COMPRAR</Button>
+
+                <button className="botaoComprar" onClick={handleShow}>COMPRAR</button>
+                <div>
+                    <Carrinho id={idProd} show={show} handleClose={handleClose} title="ADICIONAR AO CARRINHO?"
+                             texto={`adicionar ${nome} ${descricao} ao carrinho  ?`} />
+                </div>
             </div>
         </div>
     )

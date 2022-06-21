@@ -19,3 +19,9 @@
     text-decoration: solid;
     border: 1px solid red;
 }
+.botaoComprar{
+    color: white;
+    border-radius: 20px;
+    background-color: #585858;
+
+}
