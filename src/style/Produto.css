@@ -12,3 +12,10 @@
     margin: 25px;
     padding-bottom: 30px
 }
+
+.delete{
+    color: red;
+    background-color: black;
+    text-decoration: solid;
+    border: 1px solid red;
+}

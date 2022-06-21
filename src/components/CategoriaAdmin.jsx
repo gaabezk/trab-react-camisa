@@ -87,7 +87,7 @@ function CategoriaAdmin() {
                     <input type="submit" value="Alterar Time" />
                 </div>
             </form>
-            <button onClick={handleShow}>DELETAR</button>
+            <button className="delete" onClick={handleShow}>DELETAR</button>
             <div>
                 <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?"
                     texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`} />

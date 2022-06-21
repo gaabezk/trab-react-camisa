@@ -108,7 +108,7 @@ export default function FuncionarioAdmin() {
                     <input type="submit" value="Alterar Funcionario" />
                 </div>
             </form>
-            <button onClick={handleShow}>DELETAR</button>
+            <button className="delete" onClick={handleShow}>DELETAR</button>
             <div>
                 <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR FUNCIONARIO?"
                     texto={`voce tem certeza que deseja deletar o funcionario ${nome} ?`} />

@@ -16,6 +16,7 @@ function ProdutoAdmin() {
     const [quantidadeEstoque, setQuantidadeEstoque] = useState();
     const [tamanho, setTamanho] = useState();
     const [valor, setValor] = useState();
+    const [foto, setFoto] = useState();
 
     function cadastrar(e) {
         e.preventDefault();
@@ -106,6 +107,9 @@ function ProdutoAdmin() {
                     <input type="number" placeholder="Valor" onChange={(e) => setValor(e.target.value)} />
                 </div>
                 <div className="input">
+                    <input type="file" placeholder="Foto" onChange={(e) => setFoto(e.target.value)} />
+                </div>
+                <div className="input">
                     <input type="submit" value="Cadastrar Produto" />
                 </div>
             </form>
@@ -114,7 +118,7 @@ function ProdutoAdmin() {
                     <input type="submit" value="Alterar Produto" />
                 </div>
             </form>
-            <button onClick={handleShow}>DELETAR</button>
+            <button className="delete" onClick={handleShow}>DELETAR</button>
             <div>
                 <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR PRODUTO?"
                     texto={`voce tem certeza que deseja deletar o produto ${nome} ?`} />
