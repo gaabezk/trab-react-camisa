@@ -19,7 +19,9 @@ function CategoriaAdmin() {
 
     function deletar(e) {
         e.preventDefault();
-        console.log("TESTEEEEEEEEEEEEEEEEEEE")
+        console.log("TESTEEEEEEEEEEEEEEEEEEE");
+        console.log("TESTEEEEEEEEEEEEEEEEE");
+        handleClose();
     }
 
     function cadastrar(e) {
@@ -39,16 +41,6 @@ function CategoriaAdmin() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
-    }
-
-    function alterarOuCadastrar() {
-        if (teste == 1) {
-            alterar()
-            console.log("alterou");
-        } else {
-            cadastrar()
-            console.log("cadastrou");
-        }
     }
 
     return (
@@ -79,14 +71,17 @@ function CategoriaAdmin() {
                         <input type="submit" value="Alterar Time" />
                     </div>
                 </form>
-                <form onSubmit={(e) => {setShow(true);deletar(e)}}>
-                    <div className="input">
-                        <input className="deletar" type="submit" value="Deletar Produto"/>
-                    </div>
-                </form>
+
+                {/*<form onSubmit={(e) => {setShow(true)} }>*/}
+                {/*    <div className="input">*/}
+                {/*        <input className="deletar" type="submit" value="Deletar Produto"/>*/}
+                {/*    </div>*/}
+                {/*</form>*/}
+            <button onClick={handleShow}>APAGAR</button>
 
             <div>
-                <Message acao={deletar} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?" texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`}/>
+                <Message acao={(e)=>deletar(e)} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?"
+                         texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`}/>
             </div>
         </div>
     )

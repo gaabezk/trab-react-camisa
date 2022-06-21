@@ -68,9 +68,8 @@ export default function UserNewAccount() {
     }
     return (
         <div>
-            <h1 className="titulo">Usuario</h1>
+            <h1 className="titulo">Cadastro</h1>
             <form onSubmit={cadastrar}>
-                <h4 className="titulo">Cadastro:</h4>
                 <div className="input">
                     <input type="text" placeholder="Nome completo" onChange={(e) => setNome(e.target.value)} />
                 </div>
@@ -94,20 +93,24 @@ export default function UserNewAccount() {
                 </div>
 
                 <div className="input">
-                    <input type="submit" value="Cadastrar Funcionario" />
+                    <input type="submit" value="Criar Conta" />
                 </div>
             </form>
             <form onSubmit={alterar}>
                 <div className="input">
-                    <input type="submit" value="Alterar Funcionario" />
+                    <input type="submit" value="Alterar Conta" />
                 </div>
             </form>
             <form onSubmit={(e) => { setShow(true); deletar(e) }}>
                 <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Funcionario" />
+                    <input className="deletar" type="submit" value="Deletar Conta" />
                 </div>
             </form>
-            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o cliente ${nome} ?`} />
+            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o sua conta ${nome} ?`} />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     )
 }
