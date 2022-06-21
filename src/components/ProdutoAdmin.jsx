@@ -42,11 +42,34 @@ function ProdutoAdmin() {
 
     function alterar(e) {
         e.preventDefault();
-        console.log(`${produto} alterado com sucesso`)
-        console.log(`Alteracoes: Categoria:${categoria}, Descricao:${descricao}, Genero:${genero}, Nome:${nome}, Quantidade:${quantidadeEstoque}, Tamanho:${tamanho}, Valor:${valor}`)
+        API.put(`/produto/${produto}`, {
+            descricao: `{descricao}`,
+            genero: `{genero}`,
+            nome: `{nome}`,
+            quantidadeEstoque: `{quantidadeEstoque}`,
+            tamanho: `{tamanho}`,
+            valor: `{valor}`,
+        },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
+
     function deletar(e) {
         e.preventDefault();
+        API.delete(`/produto/${produto}`)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -91,12 +114,11 @@ function ProdutoAdmin() {
                     <input type="submit" value="Alterar Produto" />
                 </div>
             </form>
-            <form onSubmit={(e) => { setShow(true); deletar(e) }}>
-                <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Produto" />
-                </div>
-            </form>
-            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o produto ${produto} ?`} />
+            <button onClick={handleShow}>DELETAR</button>
+            <div>
+                <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR PRODUTO?"
+                    texto={`voce tem certeza que deseja deletar o produto ${nome} ?`} />
+            </div>
         </div>
     )
 }

@@ -13,21 +13,37 @@ function CategoriaAdmin() {
 
     function alterar(e) {
         e.preventDefault();
-        console.log("alterou");
+        API.put(`/categoria/${nome}`, {
+            nome: `${nome}`,
+            descricao: `${descricao}`,
+        },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     function deletar(e) {
         e.preventDefault();
-        console.log("TESTEEEEEEEEEEEEEEEEEEE");
-        console.log("TESTEEEEEEEEEEEEEEEEE");
-        handleClose();
-
+        API.delete(`/categoria/${funcionario}`)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     function cadastrar(e) {
         e.preventDefault();
         API.post(`/categoria/${funcionario}`, {
-            nome: `${nome}`, descricao: `${descricao}`
+            nome: `${nome}`,
+            descricao: `${descricao}`
         },
             {
                 headers: {
@@ -66,15 +82,15 @@ function CategoriaAdmin() {
                 </div>
             </form>
 
-                <form onSubmit={alterar}>
-                    <div className="input">
-                        <input type="submit" value="Alterar Time" />
-                    </div>
-                </form>
-            <button onClick={handleShow}>APAGAR</button>
+            <form onSubmit={alterar}>
+                <div className="input">
+                    <input type="submit" value="Alterar Time" />
+                </div>
+            </form>
+            <button onClick={handleShow}>DELETAR</button>
             <div>
-                <Message acao={(e)=>deletar(e)} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?"
-                         texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`}/>
+                <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?"
+                    texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`} />
             </div>
         </div>
     )
