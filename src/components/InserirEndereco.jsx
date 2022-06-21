@@ -1,13 +1,17 @@
 import { useState } from "react";
 import '../style/Cadastro.css'
 import API from "../API";
+import Message from "./Modal";
 
 export function InserirEndereco() {
 
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [cep, setCep] = useState()
     const [numero, setNumero] = useState()
     const [complemento, setComplemento] = useState()
-    const [cliente,setCliente] = useState();
+    const [cliente, setCliente] = useState();
 
 
     function Cadastrar(e) {
@@ -22,7 +26,8 @@ export function InserirEndereco() {
 
             cliente: {
                 cpf: `${cliente}`
-            }},
+            }
+        },
 
             {
                 headers: {
@@ -31,6 +36,15 @@ export function InserirEndereco() {
                 },
             },
         )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
+    }
+
+    function deletar(e) {
+        e.preventDefault();
+        API.delete(`/endereco/${cliente}`)
             .then(response => {
                 console.log(response.data)
             })
@@ -57,6 +71,11 @@ export function InserirEndereco() {
                     <input type="submit" value="Cadastrar" />
                 </div>
             </form>
+            <button className="delete" onClick={handleShow}>DELETAR</button>
+            <div>
+                <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR ENDERECO?"
+                    texto={`voce tem certeza que deseja deletar o endereco ${cep} ?`} />
+            </div>
         </div>
     )
 }
