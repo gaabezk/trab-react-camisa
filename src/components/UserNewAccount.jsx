@@ -8,7 +8,7 @@ export default function UserNewAccount() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [nome, setNome] = useState()
-    const [cpf, setCpf] = useState() //nao pode ser alterado
+    const [cpf, setCpf] = useState()
     const [dataNascimento, setDataNascimento] = useState()
     const [email, setEmail] = useState()
     const [username, setUsername] = useState()
@@ -65,6 +65,7 @@ export default function UserNewAccount() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
     return (
         <div>

@@ -49,6 +49,7 @@ export function InserirEndereco() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
 
     return (
