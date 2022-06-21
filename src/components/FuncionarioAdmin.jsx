@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Message from "./Modal";
+import API from "../API"
 
 export default function FuncionarioAdmin() {
 
@@ -15,19 +16,56 @@ export default function FuncionarioAdmin() {
     const [telefone, setTelefone] = useState()
     const [username, setUsername] = useState()
 
-    function alterar(e) {
-        e.preventDefault();
-        console.log(`${funcionario} alterado com sucesso`)
-        console.log(`Alteracoes: Data de Nasc:${dataNascimento}, email:${email}, Nome:${nome}, senha:${senha}, telefone:${telefone}, username:${username}`)
-    }
     function cadastrar(e) {
         e.preventDefault();
-        console.log(`${funcionario} criado com sucesso`)
-        console.log(`Data de Nasc:${dataNascimento}, email:${email}, Nome:${nome}, senha:${senha}, telefone:${telefone}, username:${username}`)
+        API.post(`/usuario/funcionario/${funcionario}`, {
+            nome: `${nome}`,
+            cpf: `${cpf}`,
+            dataNascimento: `${dataNascimento}`,
+            email: `${email}`,
+            senha: `${senha}`,
+            telefone: `${telefone}`,
+            username: `${username}`
+        },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
+    }
+
+    function alterar(e) {
+        e.preventDefault();
+        API.put(`/usuario/funcionario/${cpf}`, {
+            nome: `${nome}`,
+            telefone: `${telefone}`,
+        },
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+            },
+        )
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     function deletar(e) {
         e.preventDefault();
+        API.delete(`/usuario/funcionario/${cpf}`)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -65,17 +103,17 @@ export default function FuncionarioAdmin() {
                     <input type="submit" value="Cadastrar Funcionario" />
                 </div>
             </form>
-                <form onSubmit={alterar}>
-                    <div className="input">
-                        <input type="submit" value="Alterar Funcionario" />
-                    </div>
-                </form>
-                <form onSubmit={(e) => { setShow(true); deletar(e) }}>
-                    <div className="input">
-                        <input className="deletar" type="submit" value="Deletar Funcionario" />
-                    </div>
-                </form>
-                <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o funcionario ${funcionario} ?`} />
+            <form onSubmit={alterar}>
+                <div className="input">
+                    <input type="submit" value="Alterar Funcionario" />
+                </div>
+            </form>
+            <form onSubmit={(e) => { setShow(true); deletar(e) }}>
+                <div className="input">
+                    <input className="deletar" type="submit" value="Deletar Funcionario" />
+                </div>
+            </form>
+            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o funcionario ${funcionario} ?`} />
         </div>
     )
 }

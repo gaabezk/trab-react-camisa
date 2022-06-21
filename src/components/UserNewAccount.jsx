@@ -18,14 +18,14 @@ export default function UserNewAccount() {
     function cadastrar(e) {
         e.preventDefault();
         API.post("/usuario/cliente", {
-                nome: `${nome}`,
-                cpf: `${cpf}`,
-                dataNascimento: `${dataNascimento}`,
-                email:`${email}`,
-                senha: `${senha}`,
-                telefone: `${telefone}`,
-                username: `${username}`
-            },
+            nome: `${nome}`,
+            cpf: `${cpf}`,
+            dataNascimento: `${dataNascimento}`,
+            email: `${email}`,
+            senha: `${senha}`,
+            telefone: `${telefone}`,
+            username: `${username}`
+        },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,9 +42,9 @@ export default function UserNewAccount() {
     function alterar(e) {
         e.preventDefault();
         API.put(`/usuario/cliente/${cpf}`, {
-                nome:`${nome}`,
-                telefone: `${telefone}`,
-            },
+            nome: `${nome}`,
+            telefone: `${telefone}`,
+        },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,20 +94,20 @@ export default function UserNewAccount() {
                 </div>
 
                 <div className="input">
-                    <input type="submit" value="Cadastrar Funcionario" />
+                    <input type="submit" value="Cadastrar Conta" />
                 </div>
             </form>
             <form onSubmit={alterar}>
                 <div className="input">
-                    <input type="submit" value="Alterar Funcionario" />
+                    <input type="submit" value="Alterar Conta" />
                 </div>
             </form>
             <form onSubmit={(e) => { setShow(true); deletar(e) }}>
                 <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Funcionario" />
+                    <input className="deletar" type="submit" value="Deletar Conta" />
                 </div>
             </form>
-            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o cliente ${nome} ?`} />
+            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar sua conta?`} />
         </div>
     )
 }
