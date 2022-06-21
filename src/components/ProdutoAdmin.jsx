@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Message from "./Modal";
 import API from "../API"
-import axios from 'axios';
+import FormData from 'form-data';
 
 function ProdutoAdmin() {
 
@@ -19,31 +19,37 @@ function ProdutoAdmin() {
     const [valor, setValor] = useState();
     const [foto, setFoto] = useState();
 
-    var produtoData = {
-
-        "descricao": `${descricao}`,
-        "genero": `${genero}`,
-        "nome": `${nome}`,
-        "quantidadeEstoque": `${quantidadeEstoque}`,
-        "tamanho": `${tamanho}`,
-        "valor": `${valor}`
-    }
-
     async function cadastrar(e) {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append("produtoDTO", produtoData);
-        formData.append("file", foto);
-        try {
-            const response = await axios({
-                method: "post",
-                url: `http://localhost:8080/produto/${categoria}/${funcionario}`,
-                data: formData,
-                headers: [{"Content-Type": "application/json"},{"Content-Type": "image/png"}],Accept: 'multipart/form-data',
+        var data = new FormData();
+
+        const meuJSON = new Blob([JSON.stringify({
+            descricao: descricao,  genero: genero,  nome: nome,  quantidadeEstoque: quantidadeEstoque,  tamanho: tamanho,  valor: valor
+        })], {
+            type: 'application/json'
+        });
+
+        data.append("file", foto);
+        data.append('produtoDTO',meuJSON, {contentType: 'application/json' });
+
+
+        var config = {
+            method: 'post',
+            url: '/produto/fluminense/20960715002',
+            // headers: {
+            //     ...data.getHeaders()
+            // },
+            headers: { 'Content-Type': 'multipart/form-data' },
+            data : data
+        };
+
+        API(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
             });
-        } catch (error) {
-            console.log(error)
-        }
     }
 
     function alterar(e) {
@@ -115,7 +121,7 @@ function ProdutoAdmin() {
                     <input type="number" placeholder="Valor" onChange={(e) => setValor(e.target.value)}/>
                 </div>
                 <div className="input">
-                    <input type="text" placeholder="Foto" onChange={(e) => setFoto(e.target.value)}/>
+                    <input type="file" placeholder="Foto" onChange={(e) => setFoto(e.target.files[0])}/>
                 </div>
                 <div className="input">
                     <input type="submit" value="Cadastrar Produto"/>
