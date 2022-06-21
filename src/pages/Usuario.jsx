@@ -1,6 +1,5 @@
 import InserirEndereco from "../components/InserirEndereco";
 import UserNewAccount from "../components/UserNewAccount";
-import '../style/Cadastro.css'
 
 export function Usuario() {
 

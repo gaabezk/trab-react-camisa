@@ -1,5 +1,4 @@
 import { useState } from "react";
-import '../style/Cadastro.css'
 import API from "../API";
 import Message from "./Modal";
 
