@@ -103,20 +103,11 @@ export default function UserNewAccount() {
                     <input type="submit" value="Alterar Conta" />
                 </div>
             </form>
-            <form onSubmit={(e) => { setShow(true); deletar(e) }}>
-                <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Conta" />
-                </div>
-            </form>
-
-            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar o sua conta ${nome} ?`} />
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-
-            <Message show={show} handleClose={handleClose} title="DESEJA DELETAR?" texto={`voce tem certeza que deseja deletar sua conta?`} />
-
+            <button onClick={handleShow}>DELETAR</button>
+            <div>
+                <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR CONTA?"
+                    texto={`voce tem certeza que deseja deletar a conta ?`} />
+            </div>
         </div>
     )
 }
