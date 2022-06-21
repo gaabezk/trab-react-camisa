@@ -2,7 +2,7 @@ export function Nav() {
     return (
         <div>
             <nav className="navbar">
-                <div className="container noPading">
+                <div className="container">
                     <ul className="nav">
                         <li className="nav-item">
                             <a href="http://localhost:3000">

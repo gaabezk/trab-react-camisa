@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <div>
+        <div align="center">
             <footer className="footer">
                 <div className="container">
                     <div className="row">

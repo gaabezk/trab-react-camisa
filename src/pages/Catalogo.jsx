@@ -17,7 +17,7 @@ export const Catalogo = () => {
 
     const novoArray = produto.map((t,index) => {
         return (
-            <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+            <div key={index} className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                 <Produto nome={t.nome} descricao={t.descricao} tamanho={t.tamanho} genero={t.genero} valor={t.valor} categoria={t.categoria.nome} id={t.id} img={t.url}/>
             </div>
         )

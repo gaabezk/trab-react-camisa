@@ -18,7 +18,10 @@ function CategoriaAdmin() {
 
     function deletar(e) {
         e.preventDefault();
-        console.log(`Categoria $(nome) deletada com sucesso!`)
+        console.log("TESTEEEEEEEEEEEEEEEEEEE");
+        console.log("TESTEEEEEEEEEEEEEEEEE");
+        handleClose();
+
     }
 
     function cadastrar(e) {
@@ -62,19 +65,16 @@ function CategoriaAdmin() {
                     <input type="submit" value="Cadastrar Time" />
                 </div>
             </form>
-            <form onSubmit={alterar}>
-                <div className="input">
-                    <input type="submit" value="Alterar Time" />
-                </div>
-            </form>
-            <form onSubmit={(e) => { setShow(true); deletar(e) }}>
-                <div className="input">
-                    <input className="deletar" type="submit" value="Deletar Produto" />
-                </div>
-            </form>
 
+                <form onSubmit={alterar}>
+                    <div className="input">
+                        <input type="submit" value="Alterar Time" />
+                    </div>
+                </form>
+            <button onClick={handleShow}>APAGAR</button>
             <div>
-                <Message acao={deletar} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?" texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`} />
+                <Message acao={(e)=>deletar(e)} show={show} handleClose={handleClose} title="DELETAR CATEGORIA?"
+                         texto={`voce tem certeza que deseja deletar a categoria ${nome} ?`}/>
             </div>
         </div>
     )

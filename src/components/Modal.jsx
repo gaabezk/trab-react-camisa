@@ -13,7 +13,7 @@ export default function Message({ show, handleClose, title, texto, acao }) {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button onClick={acao} variant="primary">Confirmar</Button>
+                    <Button onClick={(e)=>acao(e)} variant="primary">Confirmar</Button>
                     <Button onClick={handleClose} variant="secondary">Cancelar</Button>
                 </Modal.Footer>
             </Modal.Dialog>
