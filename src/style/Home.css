@@ -1,0 +1,10 @@
+.home_container h1{
+    font-size: 2.5em;
+    margin-bottom: .5em;
+}
+
+.home_container h1 span{
+    color: blue;
+    padding: 0 .2em;
+    background-color: red;
+}
