@@ -66,6 +66,7 @@ export default function FuncionarioAdmin() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
 
     return (

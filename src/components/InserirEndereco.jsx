@@ -1,5 +1,4 @@
 import { useState } from "react";
-import '../style/Cadastro.css'
 import API from "../API";
 import Message from "./Modal";
 
@@ -49,6 +48,7 @@ export function InserirEndereco() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
 
     return (

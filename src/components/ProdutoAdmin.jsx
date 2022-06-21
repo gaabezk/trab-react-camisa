@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import Message from "./Modal";
 import API from "../API"
 import FormData from 'form-data';
@@ -18,7 +18,7 @@ function ProdutoAdmin() {
     const [tamanho, setTamanho] = useState();
     const [valor, setValor] = useState();
     const [foto, setFoto] = useState();
-
+  
     async function cadastrar(e) {
         e.preventDefault();
         var data = new FormData();
@@ -55,13 +55,13 @@ function ProdutoAdmin() {
     function alterar(e) {
         e.preventDefault();
         API.put(`/produto/${produto}`, {
-                descricao: `{descricao}`,
-                genero: `{genero}`,
-                nome: `{nome}`,
-                quantidadeEstoque: `{quantidadeEstoque}`,
-                tamanho: `{tamanho}`,
-                valor: `{valor}`,
-            },
+            descricao: `{descricao}`,
+            genero: `{genero}`,
+            nome: `{nome}`,
+            quantidadeEstoque: `{quantidadeEstoque}`,
+            tamanho: `{tamanho}`,
+            valor: `{valor}`,
+        },
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,6 +83,7 @@ function ProdutoAdmin() {
                 console.log(response.data)
             })
             .catch(error => console.log(error))
+        handleClose();
     }
 
     return (
@@ -90,52 +91,54 @@ function ProdutoAdmin() {
             <h1 className="titulo">Produto</h1>
             <h4 className="titulo">Insira as Informacoes a seguir:</h4>
             <div className="input">
-                <input type="text" placeholder="Codigo do produto" onChange={(e) => setProduto(e.target.value)}/>
+                <input type="text" placeholder="Codigo do produto" onChange={(e) => setProduto(e.target.value)} />
             </div>
             <div className="input">
                 <input type="text" placeholder="CPF do Funcionario"
-                       onChange={(e) => setFuncionario(e.target.value)}/>
+                    onChange={(e) => setFuncionario(e.target.value)} />
             </div>
             <div className="input">
-                <input type="text" placeholder="Nome da categoria" onChange={(e) => setCategoria(e.target.value)}/>
+                <input type="text" placeholder="Nome da categoria" onChange={(e) => setCategoria(e.target.value)} />
             </div>
             <form onSubmit={cadastrar}>
                 <h4 className="titulo">Informações do produto:</h4>
                 <div className="input">
-                    <input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value)}/>
+                    <input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="text" placeholder="Marca" onChange={(e) => setDescricao(e.target.value)}/>
+                    <input type="text" placeholder="Marca" onChange={(e) => setDescricao(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="text" placeholder="Genero" onChange={(e) => setGenero(e.target.value)}/>
+                    <input type="text" placeholder="Genero" onChange={(e) => setGenero(e.target.value)} />
                 </div>
                 <div className="input">
                     <input type="text" placeholder="Quantidade"
-                           onChange={(e) => setQuantidadeEstoque(e.target.value)}/>
+                        onChange={(e) => setQuantidadeEstoque(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="text" placeholder="Tamanho" onChange={(e) => setTamanho(e.target.value)}/>
+                    <input type="text" placeholder="Tamanho" onChange={(e) => setTamanho(e.target.value)} />
                 </div>
                 <div className="input">
-                    <input type="number" placeholder="Valor" onChange={(e) => setValor(e.target.value)}/>
+                    <input type="number" placeholder="Valor" onChange={(e) => setValor(e.target.value)} />
                 </div>
                 <div className="input">
+
                     <input type="file" placeholder="Foto" onChange={(e) => setFoto(e.target.files[0])}/>
+
                 </div>
                 <div className="input">
-                    <input type="submit" value="Cadastrar Produto"/>
+                    <input type="submit" value="Cadastrar Produto" />
                 </div>
             </form>
             <form onSubmit={alterar}>
                 <div className="input">
-                    <input type="submit" value="Alterar Produto"/>
+                    <input type="submit" value="Alterar Produto" />
                 </div>
             </form>
             <button className="delete" onClick={handleShow}>DELETAR</button>
             <div>
                 <Message acao={(e) => deletar(e)} show={show} handleClose={handleClose} title="DELETAR PRODUTO?"
-                         texto={`voce tem certeza que deseja deletar o produto ${nome} ?`}/>
+                    texto={`voce tem certeza que deseja deletar o produto ${nome} ?`} />
             </div>
         </div>
     )
