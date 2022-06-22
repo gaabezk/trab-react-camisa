@@ -43,7 +43,7 @@ export function InserirEndereco() {
 
     function deletar(e) {
         e.preventDefault();
-        API.delete(`/endereco/${cliente}`)
+        API.delete(`/endereco/${cep}/${numero}`)
             .then(response => {
                 console.log(response.data)
             })

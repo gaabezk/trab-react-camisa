@@ -35,7 +35,7 @@ function ProdutoAdmin() {
 
         var config = {
             method: 'post',
-            url: '/produto/fluminense/20960715002',
+            url: `/produto/${categoria}/20960715002`,
             // headers: {
             //     ...data.getHeaders()
             // },
